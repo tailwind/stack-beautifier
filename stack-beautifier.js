@@ -53,6 +53,7 @@ const STACK_LINE_MATCHERS = [
   { regex: /^at (.*)\:(\d+)\:(\d+)$/, idx: [1, 2, 3] }, // Format: at filename:13:12
   { regex: /^at (.*) \((.*)\:(\d+)\:(\d+)\)$/, idx: [1, 3, 4] }, // Format: at someFun (filename:13:12)
   { regex: /^at (.*)\:(\d+)$/, idx: [1, 2, 3] }, // Format: at filename:13
+  { regex: /jsbundle(\S+) +(\d+) (\d+)$/, idx: [1, 2, 3] }, // Format: **/*.jsbundlesomeFun 13 12
 ];
 
 function main(program) {
@@ -113,15 +114,7 @@ function processStack(lines, sourceMapConsumer) {
     const line = lines[i];
     const match = matchStackLine(line);
     if (!match) {
-      if (i === 0) {
-        // we allow first line to contain trace message, we just pass it through to the result table
-        result.push({ text: line });
-      } else if (!line) {
-        // we treat empty stack trace line as the end of an input
-        break;
-      } else {
-        throw new Error(`Stack trace parse error at line ${i + 1}: ${line}`);
-      }
+      result.push({ text: line });
     } else {
       result.push(processMatchedLine(match, sourceMapConsumer));
     }

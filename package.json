@@ -4,7 +4,7 @@
   "description": "Tool for decrypting stack traces coming from the minified JS code",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SoftwareMansion/stack-beautifier.git"
+    "url": "git+https://github.com/tailwind/stack-beautifier.git"
   },
   "keywords": [
     "react-native",
@@ -20,9 +20,9 @@
   "license": "MIT",
   "readmeFilename": "README.md",
    "bugs": {
-    "url": "https://github.com/SoftwareMansion/stack-beautifier/issues"
+    "url": "https://github.com/tailwind/stack-beautifier/issues"
   },
-  "homepage": "https://github.com/SoftwareMansion/stack-beautifier#readme",
+  "homepage": "https://github.com/tailwind/stack-beautifier#readme",
   "dependencies": {
     "commander": "2.9.0",
     "source-map": "0.5.6"

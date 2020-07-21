@@ -8,7 +8,7 @@ This tool helps with translating minified/uglified stack traces from your produc
 
 ## Installation
 
-Install it using npm: `npm install -g stack-beautifier`
+Install it using npm: `npm install -g git+ssh://git@github.com:tailwind/stack-beautifier.git`
 
 ## Usage
 
@@ -109,18 +109,3 @@ Fatal Exception: com.facebook.react.common.JavascriptException: Invalid attempt 
   at fn (./node_modules/react-native/Libraries/Utilities/MessageQueue.js:46:4)
   at __callFunction (./node_modules/react-native/Libraries/Utilities/MessageQueue.js:118:20)
 ```
-
-## Troubleshooting
-
-#### Getting error "Stack trace parse error at line N"
-
-It means that the tool is not able to understand the format of the stacktrace. The tool only supports most common stack traces formats, please check if the stack trace you're trying to input is in one of the supported formats. There is also a chance that your stack trace is in a valid format but your file contain some
-
-#### Still having some issues
-
-Try searching over the issues on GitHub [here](https://github.com/SoftwareMansion/stack-beautifier/issues). If you don't find anything that would help feel free to open new issue!
-
-
-## Contributing
-
-All PRs are welcome!
